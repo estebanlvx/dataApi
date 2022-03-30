@@ -1,14 +1,18 @@
 package com.entreprise.dataApi.Controller;
 
+import com.entreprise.dataApi.Dto.Model.jobDto;
 import com.entreprise.dataApi.Dto.Model.prodDto;
 import com.entreprise.dataApi.Model.employee;
+import com.entreprise.dataApi.Model.job;
 import com.entreprise.dataApi.Model.prod;
+import com.entreprise.dataApi.Service.JobService;
 import com.entreprise.dataApi.Service.employeeService;
 import com.entreprise.dataApi.Service.prodService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -31,10 +35,5 @@ public class prodController {
         return prodService.getAll();
     }
 
-    @PostMapping
-    public prod create(final @RequestBody prodDto prodDto){
-        employee prodOwner = employeeService.get(prodDto.getprodOwnerId()).orElseThrow(() -> new RuntimeException("User not found : " + prodDto.getprodOwnerId()));
 
-        return prodService.create(prodDto.isProdBool(), prodOwner).orElseThrow(() -> new RuntimeException("Something went wrong, please try later"));
-    }
 }

@@ -1,6 +1,10 @@
 package com.entreprise.dataApi.Service;
 
+import com.entreprise.dataApi.Dto.Model.employeeDto;
+import com.entreprise.dataApi.Dto.Model.jobDto;
+import com.entreprise.dataApi.Dto.Model.prodDto;
 import com.entreprise.dataApi.Model.employee;
+import com.entreprise.dataApi.Model.job;
 import com.entreprise.dataApi.Model.prod;
 import com.entreprise.dataApi.repository.prodRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,4 +52,23 @@ public class prodServiceImpl implements prodService{
         return prodRepository.findByemployeeId(prodOwnerId);
     }
 
+    @Override
+    public Optional<prod> create(prodDto prodDto) {
+        return Optional.empty();
+    }
+
+    @Override
+    public String delete(long prodId) {
+        return null;
+    }
+
+    @Override
+    public Optional<prod> update(prod existingprodToUpdate, prodDto prodDtoWithUpdate) {
+        return Optional.empty();
+    }
+
+
 }
+
+
+

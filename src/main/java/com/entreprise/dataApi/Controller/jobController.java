@@ -1,10 +1,13 @@
 package com.entreprise.dataApi.Controller;
 
+import com.entreprise.dataApi.Dto.Model.employeeDto;
+import com.entreprise.dataApi.Dto.Model.jobDto;
 import com.entreprise.dataApi.Model.employee;
 import com.entreprise.dataApi.Model.job;
 import com.entreprise.dataApi.repository.jobRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.entreprise.dataApi.Service.JobService;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -45,6 +48,21 @@ public class jobController implements JobService{
     @Override
     public Optional<job> getByOwnerId(long jobOwnerId) {
         return jobRepository.findByemployeeId(jobOwnerId);
+    }
+
+    @Override
+    public Optional<job> create(jobDto jobDto) {
+        return Optional.empty();
+    }
+
+    @Override
+    public String delete(long jobId) {
+        return null;
+    }
+
+    @Override
+    public Optional<job> update(job existingjobToUpdate, jobDto jobDtoWithUpdate) {
+        return Optional.empty();
     }
 
 }

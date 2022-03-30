@@ -1,5 +1,8 @@
 package com.entreprise.dataApi.Service;
 
+import com.entreprise.dataApi.Dto.Mapper.employeeMapper;
+import com.entreprise.dataApi.Dto.Model.employeeDto;
+import com.entreprise.dataApi.Dto.Model.jobDto;
 import com.entreprise.dataApi.Model.employee;
 import com.entreprise.dataApi.Model.job;
 import com.entreprise.dataApi.repository.jobRepository;
@@ -49,5 +52,21 @@ public class jobServiceImpl implements JobService{
     public Optional<job> getByOwnerId(long jobOwnerId) {
         return jobRepository.findByemployeeId(jobOwnerId);
     }
+
+    @Override
+    public Optional<job> create(jobDto jobDto) {
+        return Optional.empty();
+    }
+
+    @Override
+    public String delete(long jobId) {
+        return null;
+    }
+
+    @Override
+    public Optional<job> update(job existingjobToUpdate, jobDto jobDtoWithUpdate) {
+        return Optional.empty();
+    }
+
 
 }

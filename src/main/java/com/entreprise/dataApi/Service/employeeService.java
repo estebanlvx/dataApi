@@ -8,42 +8,42 @@ import java.util.Optional;
 
 public interface employeeService {
     /**
-     * Get user by id
+     * Get employee by id
      *
-     * @param employeeId  user identifiant
-     * @return User find by id
+     * @param employeeId  employee identifiant
+     * @return employee find by id
      */
     Optional<employee> get(long employeeId);
 
     /**
      * Get list of employee
      *
-     * @return list of users
+     * @return list of employee
      */
     List<employee> getAll();
 
     /**
-     * Create a new user
+     * Create a new employee
      *
      * @param employeeDto to create
-     * @return a new user created
+     * @return a new employee created
      */
     Optional<employee> create(employeeDto employeeDto);
 
     /**
-     * Delete user by id
+     * Delete employee by id
      *
-     * @param employeeId  user identifiant
-     * @return delete user by id
+     * @param employeeId  employee identifiant
+     * @return delete employee by id
      */
     String delete(long employeeId);
 
     /**
      * Update a existing employee
      *
-     * @param existingemployeeToUpdate existing user object
-     * @param employeeDtoWithUpdate user dto with informations to update
-     * @return User updated
+     * @param existingemployeeToUpdate existing employee object
+     * @param employeeDtoWithUpdate employee dto with informations to update
+     * @return employee updated
      */
     Optional<employee> update(employee existingemployeeToUpdate,employeeDto employeeDtoWithUpdate);
 }

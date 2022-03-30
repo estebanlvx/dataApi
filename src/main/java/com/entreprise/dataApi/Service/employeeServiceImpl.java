@@ -34,16 +34,16 @@ public class employeeServiceImpl implements employeeService{
     @Override
     public String delete(long employeeId) {
         employeeRepository.deleteById(employeeId);
-        return "user deleted with success";
+        return "employee deleted with success";
     }
 
     @Override
     public Optional<employee> update(employee existingemployeeToUpdate, employeeDto employeeDtoWithUpdate) {
-        // -- Update existing user informations
+        // -- Update existing employee informations
         existingemployeeToUpdate.setName(employeeDtoWithUpdate.getName());
         existingemployeeToUpdate.setEmail(employeeDtoWithUpdate.getEmail());
 
-        // -- Update existing user in DB with new informations
+        // -- Update existing employee in DB with new informations
         Optional<employee> updatedemployee = Optional.of(employeeRepository.save(existingemployeeToUpdate));
 
         return updatedemployee;
